@@ -1,0 +1,20 @@
+button {
+  margin-right: 1rem
+}
+
+.acoes {
+  float: right;
+}
+
+.area {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.order:hover {
+  background-color: lightgrey;
+}
+
+.order:active {
+  background-color: grey;
+}

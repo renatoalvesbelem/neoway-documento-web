@@ -1,0 +1,29 @@
+<div class="container area">
+    <div class="form-control p-4">
+        <div class="row ">
+            <div class="col">
+                <input class="form-control {{documentoValido}}" mask="{{tipo==1? '000.000.000-00' : '00.000.000/0000-00'}}" placeholder="{{tipo==1? 'CPF' : 'CNPJ'}}" [(ngModel)]="nudocumento" (keyup)="handleValidaDocumento()" />
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <select select class="form-control" [(ngModel)]="tipo" (change)="handleTipoDocumento($event)">
+                      <option value="1">CPF</option>
+                      <option value="2">CNPJ</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col ">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="isBlacklist" id="blacklist">
+                <label class="form-check-label" for="blacklist">Blacklist</label>
+            </div>
+        </div>
+        <div class="row pt-4 ">
+            <div class="col ">
+                <button class="btn btn-success " (click)="id?handleAtualizar():handleCadastrar() ">{{id?'Atualizar':'Cadastrar'}}</button>
+                <button class="btn btn-secondary " (click)="handleListar() ">Listar</button>
+            </div>
+        </div>
+    </div>
+</div>
